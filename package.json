@@ -1,7 +1,7 @@
 {
   "name": "@monorepo/database",
   "version": "1.0.0",
-  "main": "models/index.ts",
+  "main": "service/index.ts",
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --inspect --respawn --transpile-only ./models/index.ts"
