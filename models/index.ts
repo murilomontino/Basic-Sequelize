@@ -25,15 +25,25 @@ export const database: Sequelize = new Sequelize(config.database, config.usernam
 
 import Address, { AddressInstance } from '../models/Address'
 import User, { UserInstance } from '../models/User'
+import Exam, {ExamInstance} from '../models/Exam'
+import UBS, {UBSInstance} from './UBS';
+import Patient, {PatientInstance} from './Patient';
+
 
 interface Models {
     Address: ModelCtor<AddressInstance>
-    User: ModelCtor<UserInstance>
+    User: ModelCtor<UserInstance>,
+    Exam: ModelCtor<ExamInstance>,
+    UBS: ModelCtor<UBSInstance>,
+    Patient: ModelCtor<PatientInstance>
   }
 
 const db: Models = {
   Address: Address,
-  User: User
+  User: User,
+  Exam: Exam,
+  UBS: UBS,
+  Patient: Patient
 };
 
 export default db;

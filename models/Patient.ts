@@ -3,21 +3,20 @@ import { database } from "./"
 
 
 // We recommend you declare an interface for the attributes, for stricter typechecking
-interface AddressAttributes {
+interface PatientAttributes {
     id: number;
-    rua: string;
-    numero: string
+    nome: string;
   }
   
-  // Some fields are optional when calling AddressModel.create() or AddressModel.build()
-  interface AddressCreationAttributes extends Optional<AddressAttributes, "id"> {}
+  // Some fields are optional when calling PatientModel.create() or PatientModel.build()
+  interface PatientCreationAttributes extends Optional<PatientAttributes, "id"> {}
   
   // We need to declare an interface for our model that is basically what our class would be
-  export interface AddressInstance
-    extends Model<AddressAttributes, AddressCreationAttributes>,
-      AddressAttributes {}
+  export interface PatientInstance
+    extends Model<PatientAttributes, PatientCreationAttributes>,
+      PatientAttributes {}
 
-const Address = database.define<AddressInstance>('address', {
+const Patient = database.define<PatientInstance>('Patient', {
     id: {
         primaryKey: true,
         allowNull: true,
@@ -25,8 +24,7 @@ const Address = database.define<AddressInstance>('address', {
         type: DataTypes.INTEGER,
         
     },
-    rua: DataTypes.STRING,
-    numero: DataTypes.STRING
+    nome: DataTypes.STRING
 
 }, {
     freezeTableName: true,
@@ -35,7 +33,7 @@ const Address = database.define<AddressInstance>('address', {
 
 
 // definindo o nome da sua tabela
-tableName: 'address'
+tableName: 'patients'
 })
 
-export default Address
+export default Patient

@@ -20,7 +20,8 @@ interface UserAttributes {
       UserAttributes {
         address: AddressInstance,
         createdAt: Date,
-        updatedAt: Date
+        updatedAt: Date,
+        getAddress: () => AddressInstance
       }
       
 const User = database.define<UserInstance>('users', {
@@ -35,8 +36,8 @@ const User = database.define<UserInstance>('users', {
     endereco: DataTypes.INTEGER
 },
   {
-    // não adicionar os atributos (updatedAt, createdAt)
-    timestamps: false,
+    // adicionar os atributos (updatedAt, createdAt)
+    timestamps: true,
   
     // não permite deletar do banco, mas inseri na coluna deletedAt a data da exclusão
     // se o timestamps estiver ativado
