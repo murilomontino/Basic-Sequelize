@@ -1,6 +1,3 @@
-'use strict';
-import fs from 'fs'
-import path from 'path';
 import {Dialect, ModelCtor, Sequelize} from 'sequelize';
 
 interface Options {
